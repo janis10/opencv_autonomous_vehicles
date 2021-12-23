@@ -1,8 +1,12 @@
 # opencv_autonomous_vehicles
 
-This repository presents some classic Computer Vision techniques and applies them to autonomous vehicle perception problem.
+This repository applies some classic Computer Vision techniques to autonomous vehicle perception problems in Python using OpenCV.
 * Camera calibration
 * Ego lane detection
+* Camera view to bird's eye view
+
+![egolanedetection](./data/preview_lanedetect.png)
+![cameratobev](./data/preview_bev.png)
 
 ### Dependencies
 * [OpenCV](https://opencv.org)
@@ -17,8 +21,3 @@ pip install -r requirements.txt
 pip install ipykernel
 python3 -m ipykernel install --user --name=.venv
 ```
-<!-- 
-Make sure you have opencv installed. This can be done on macOS with Homebrew:
-```
-brew install opencv
-``` -->
