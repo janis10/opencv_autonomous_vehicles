@@ -1,4 +1,12 @@
 # opencv_autonomous_vehicles
+
+This repository presents some classic Computer Vision techniques and applies them to autonomous vehicle perception problem.
+* Camera calibration
+* Ego lane detection
+
+### Dependencies
+* [OpenCV](https://opencv.org)
+* Python 3.9
  
 ### Python
 Create virtual environment with Python 3.9.9, activate it, and install libraries.
