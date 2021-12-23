@@ -115,13 +115,14 @@ def plotDetectedEgoLane(image, leftLane, rightLane):
         cv2.line(line_image, (x3, y3), (x4, y4), (255, 0, 0), 10)
     cv2.addWeighted(line_image, 1.0, line_image, 0.95, 0.0)
     if leftLane is not None and rightLane is not None:
-        pts = np.array([[x1, y1], [x2, y2], [x3, y3], [x4, y4]], dtype=np.int32)
         # Create a copy of the original
         overlay = line_image.copy()
-        # Draw polygon based on pts
-        cv2.fillConvexPoly(overlay, pts, (0, 255, 0))
+        # Draw trapezoid
+        trapezoid = np.asarray([(x1, y1), (x2, y2), (x4, y4), (x3, y3)])
+        trapezoid = np.expand_dims(trapezoid, 1).astype(np.int32)
+        overlay = cv2.fillPoly(overlay,[trapezoid], color=(0, 255, 0))
         # Combine with original
-        opacity = 0.4
+        opacity = 0.5
         cv2.addWeighted(line_image, opacity, overlay, 1-opacity, 0, line_image)
     return line_image
 
