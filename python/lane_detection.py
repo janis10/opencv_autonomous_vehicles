@@ -2,7 +2,6 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
-import itertools
 import math
 
 def selectWhiteYellow(image, space = 'RGB'): 
